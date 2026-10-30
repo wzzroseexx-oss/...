@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Saru 💜</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+.candle-reveal-area {
+  position: relative;
+  max-width: 680px;
+  margin: 24px auto;
+  overflow: hidden;
+  border-radius: 8px;
+  touch-action: none;
+  box-shadow: 0 12px 35px rgba(75,55,105,.16);
+}
+.candle-reveal-area .secret-letter {
+  display: block;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+#candleRevealCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  touch-action: none;
+  cursor: none;
+}
+#movingCandle {
+  display: none;
+  position: absolute;
+  z-index: 6;
+  transform: translate(-50%,-50%);
+  font-size: 38px;
+  pointer-events: none;
+  filter: drop-shadow(0 0 12px rgba(255,196,100,.95));
+}
+.music-note {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 20;
+  border: 1px solid #d8c9e8;
+  border-radius: 24px;
+  padding: 9px 14px;
+  background: #fffaff;
+  color: #65518b;
+  font: inherit;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="floating-decor" aria-hidden="true">
+  <span>♡</span><span>✧</span><span>♥</span><span>♡</span>
+  <span>✦</span><span>♥</span><span>♡</span><span>✧</span>
+</div>
+
+<section id="envelopeScreen" class="envelope-screen">
+  <div class="welcome-content">
+    <p class="eyebrow">A LITTLE SOMETHING FOR YOU</p>
+    <h1>For my favorite boy</h1>
+    <p class="welcome-subtitle">
+      A little piece of my heart, wrapped up just for you.
+    </p>
+
+    <div class="envelope-wrapper" id="envelopeWrapper">
+      <div class="envelope-back"></div>
+      <div class="letter-peek"><span>To my love ♡</span></div>
+      <div class="envelope-front"></div>
+      <div class="envelope-flap"></div>
+      <div class="wax-seal">♡</div>
+    </div>
+
+    <button id="openEnvelopeBtn" class="primary-button">
+      Open your letter <span>♡</span>
+    </button>
+    <p class="tiny-note">Made with love, just for Saru.</p>
+  </div>
+</section>
+
+<main id="loveLetter" class="letter-page hidden">
+
+  <div class="page-heading">
+    <span class="small-flower">✿</span>
+    <p>A LETTER FROM MY HEART</p>
+    <span class="heading-line"></span>
+  </div>
+
+  <article class="paper-letter">
+    <div class="paper-top-decoration">
+      <span>♡</span><span>✧</span><span>♡</span>
+    </div>
+
+    <p class="letter-date">A little note for my favorite person</p>
+    <h2 class="letter-title">To my dearest Saru,</h2>
+
+    <p class="letter-intro">
+      If I could give you one thing in this world,
+      it would be the ability to see yourself through my eyes.
+      Then you'd understand why you mean so much to me.
+    </p>
+
+    <div class="paper-divider"><span>✦</span></div>
+
+    <p class="letter-paragraph">
+      Thank you so much for being my safe place and for always
+      being there for me. You have no idea how much that means
+      to me, Saru. 💜
+    </p>
+
+    <p class="letter-paragraph">
+      I hope you'll never ever replace me, and no matter what
+      we go through, I hope we'll always find our way back to
+      each other.
+    </p>
+
+    <p class="letter-paragraph">
+      I love you soooo mucchhhhh, Saru. More than these little
+      words could ever explain. 🥹💗
+    </p>
+
+    <p class="letter-signoff">
+      With all my love,<br>
+      <span>Your girl ♡</span>
+    </p>
+    <div class="paper-bottom-decoration">♡</div>
+  </article>
+
+  <section class="memory-section">
+    <p class="section-eyebrow">A LITTLE MEMORY</p>
+    <h2>A moment to keep ♡</h2>
+    <p class="section-description">
+      My favourite picture of us
+    </p>
+
+    <figure class="polaroid">
+      <div class="photo-container">
+        <img src="image.png" alt="A special memory" class="memory-photo">
+      </div>
+      <figcaption>My favorite kind of happiness. 💜</figcaption>
+    </figure>
+
+    <p class="memory-caption">Some things just feel like home.</p>
+  </section>
+
+  <article class="paper-letter second-letter">
+    <p class="letter-date">Something I've been wanting to tell you</p>
+    <h2 class="letter-title">My favorite person,</h2>
+
+    <p class="letter-paragraph">
+      Sometimes I wonder how one person can become such a special
+      part of another person's world. And then I think about you,
+      and somehow, the answer feels so simple.
+    </p>
+
+    <p class="letter-paragraph emphasis">
+      It's you, Saru. It's always the little things about you. 💜
+    </p>
+
+    <p class="letter-paragraph">
+      It's the way you make ordinary moments feel special.
+      It's the comfort I find in knowing you're there.
+      It's how even the smallest things remind me of you,
+      and how a simple thought of you can make me smile
+      without even realizing it.
+    </p>
+
+    <p class="letter-paragraph">
+      You have become someone I want to tell everything to,
+      someone I want to share my happiest moments with,
+      and someone I want beside me when life feels difficult.
+    </p>
+
+    <p class="letter-paragraph">
+      I know we're not perfect. We'll have our little
+      misunderstandings, our difficult days, and moments when
+      we might not know exactly what to say. But I hope we always
+      remember that we're on the same team. And I hope we will Always
+      be there for eachother .
+    </p>
+
+    <p class="letter-paragraph">
+      I hope we keep choosing patience, honesty, kindness,
+      and each other. I hope we keep learning about one another,
+      growing together, and making beautiful memories.
+    </p>
+
+    <p class="letter-paragraph">
+      I never want you to feel like you have to be perfect for me.
+      I want you to be yourself with me. Your silly side, your
+      quiet side, your happy days, your tired days, and every
+      little thing that makes you YOU.
+    </p>
+
+    <p class="letter-paragraph">
+      You don't have to do something extraordinary to make me
+      love you. Sometimes, just being you is more than enough.
+    </p>
+
+    <p class="letter-paragraph">
+      Thank you for being part of my life. Thank you for the
+      memories we've made and the ones we haven't made yet.
+      Thank you for giving me so many little reasons to smile.
+    </p>
+
+    <p class="letter-paragraph">
+      If I could wish for one thing, it would be that we keep
+      finding our way back to each other, even on the difficult
+      days. That we keep laughing together, caring for each other,
+      and making little moments worth remembering.
+    </p>
+
+    <p class="letter-paragraph">
+      You're so special to me, Saru. More than this little
+      website could ever explain.
+    </p>
+
+    <p class="letter-paragraph emphasis">
+      I love you, my favorite boy. Today, tomorrow, and through
+      all the little moments in between. 💜
+    </p>
+
+    <p class="letter-signoff">
+      Always sending you the biggest hug,<br>
+      <span>Your girl ♡</span>
+    </p>
+  </article>
+
+  <section class="secret-section">
+    <div class="secret-heading">
+      <span>✧</span>
+      <p>ONE LAST LITTLE SECRET</p>
+      <span>✧</span>
+    </div>
+
+    <h2>There's something else...</h2>
+    <p class="section-description">
+      A tiny surprise is waiting for you.
+    </p>
+
+    <p class="candle-instruction">
+      Move your candle around to uncover your secret note. 💜
+    </p>
+
+    <div id="candleRevealArea" class="candle-reveal-area">
+      <article id="secretLetter" class="paper-letter secret-letter">
+        <p class="letter-date">Just between us ♡</p>
+        <h2 class="letter-title">One last thing, Saru...</h2>
+
+        <p class="letter-paragraph">
+          If there is one thing I hope you always remember,
+          it's that you matter to me.
+        </p>
+
+        <p class="letter-paragraph">
+          Even on the days when you don't feel your best,
+          even when life gets overwhelming, I hope you remember
+          that you deserve love, patience, happiness, and all
+          the beautiful things life has to offer. And you are doing 
+          great , I will always be proud of you.
+        </p>
+
+        <p class="letter-paragraph">
+          I hope destiny is with us and we will be together inshallah. 
+          I hope you would never get tired of me. Even if we aren't 
+          meant for eachother I will still pray that you will archive 
+          everything in your life with or without me.
+
+        </p>
+
+        <p class="letter-paragraph">
+          And if someday you ever wonder how much I love you,
+          remember this little letter.
+        </p>
+
+        <p class="letter-paragraph">
+          Somewhere in this big world, there is a girl who made
+          this little corner of the internet just to remind you
+          that you're loved. 🥹💜
+        </p>
+
+        <p class="letter-paragraph emphasis">
+          That's you, Saru. My favorite boy. ♡
+        </p>
+
+        <p class="final-love">I LOVE YOU SOOO MUCHHH 💜</p>
+        <div class="paper-bottom-decoration">♡</div>
+      </article>
+
+      <canvas id="candleRevealCanvas"></canvas>
+      <span id="movingCandle" aria-hidden="true">🕯️</span>
+    </div>
+  </section>
+
+  <footer class="final-footer">
+    <div class="footer-hearts">♡ &nbsp; ✧ &nbsp; ♡</div>
+    <p>And that's a little piece of my heart.</p>
+    <h2>Forever your girl. 💜</h2>
+    <p class="footer-small">Made with love, just for Saru.</p>
+  </footer>
+</main>
+
+<script>
+const openButton = document.getElementById("openEnvelopeBtn");
+const envelopeScreen = document.getElementById("envelopeScreen");
+const envelopeWrapper = document.getElementById("envelopeWrapper");
+const loveLetter = document.getElementById("loveLetter");
+
+let letterOpened = false;
+
+/* SOFT BACKGROUND MUSIC — NO MP3 REQUIRED */
+let audioContext = null;
+let masterGain = null;
+let musicPlaying = false;
+let chordTimer = null;
+
+function startSoftMusic() {
+  const AudioClass = window.AudioContext || window.webkitAudioContext;
+  if (!AudioClass) return;
+
+  if (audioContext) {
+    audioContext.resume();
+    return;
+  }
+
+  audioContext = new AudioClass();
+  masterGain = audioContext.createGain();
+  masterGain.gain.value = 0;
+  masterGain.connect(audioContext.destination);
+  masterGain.gain.setTargetAtTime(0.035, audioContext.currentTime, 2);
+
+  const chords = [
+    [261.63, 329.63, 392],
+    [220, 261.63, 329.63],
+    [174.61, 220, 261.63],
+    [196, 246.94, 293.66]
+  ];
+
+  const oscillators = [];
+
+  chords[0].forEach((frequency) => {
+    const osc = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+
+    osc.type = "sine";
+    osc.frequency.value = frequency;
+    gain.gain.value = 0.025;
+
+    osc.connect(gain);
+    gain.connect(masterGain);
+    osc.start();
+
+    oscillators.push(osc);
+  });
+
+  let chordIndex = 0;
+
+  chordTimer = window.setInterval(() => {
+    chordIndex = (chordIndex + 1) % chords.length;
+    oscillators.forEach((osc, i) => {
+      osc.frequency.setTargetAtTime(
+        chords[chordIndex][i],
+        audioContext.currentTime,
+        2
+      );
+    });
+  }, 7000);
+
+  musicPlaying = true;
+  musicButton.textContent = "♫ Music on";
+}
+
+const musicButton = document.createElement("button");
+musicButton.className = "music-note";
+musicButton.textContent = "♫ Music off";
+musicButton.type = "button";
+document.body.appendChild(musicButton);
+
+musicButton.addEventListener("click", () => {
+  if (!audioContext) {
+    startSoftMusic();
+    return;
+  }
+
+  if (audioContext.state === "suspended") audioContext.resume();
+
+  musicPlaying = !musicPlaying;
+  masterGain.gain.setTargetAtTime(
+    musicPlaying ? 0.035 : 0,
+    audioContext.currentTime,
+    0.5
+  );
+  musicButton.textContent = musicPlaying ? "♫ Music on" : "♫ Music off";
+});
+
+/* OPEN ENVELOPE */
+openButton.addEventListener("click", function () {
+  startSoftMusic();
+
+  if (letterOpened) return;
+  letterOpened = true;
+
+  envelopeWrapper.classList.add("opened");
+  openButton.disabled = true;
+
+  setTimeout(() => {
+    envelopeScreen.classList.add("hidden");
+    loveLetter.classList.remove("hidden");
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    initializeCandle();
+  }, 850);
+});
+
+/* MOVING CANDLE REVEAL */
+function initializeCandle() {
+  const area = document.getElementById("candleRevealArea");
+  const canvas = document.getElementById("candleRevealCanvas");
+  const candle = document.getElementById("movingCandle");
+
+  if (!area || !canvas || canvas.dataset.ready) return;
+  canvas.dataset.ready = "true";
+
+  const ctx = canvas.getContext("2d");
+  let drawing = false;
+  let lastPoint = null;
+
+  function paintVeil() {
+    const rect = area.getBoundingClientRect();
+    const dpr = window.devicePixelRatio || 1;
+
+    canvas.width = Math.round(rect.width * dpr);
+    canvas.height = Math.round(rect.height * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    ctx.globalCompositeOperation = "source-over";
+    ctx.fillStyle = "#b8a8d8";
+    ctx.fillRect(0, 0, rect.width, rect.height);
+
+    ctx.fillStyle = "rgba(61,45,84,.22)";
+    ctx.fillRect(0, 0, rect.width, rect.height);
+
+    ctx.fillStyle = "rgba(255,255,255,.75)";
+    for (let i = 0; i < 28; i++) {
+      ctx.beginPath();
+      ctx.arc(
+        Math.random() * rect.width,
+        Math.random() * rect.height,
+        1.2, 0, Math.PI * 2
+      );
+      ctx.fill();
+    }
+  }
+
+  function revealAt(x, y) {
+    ctx.save();
+    ctx.globalCompositeOperation = "destination-out";
+
+    const glow = ctx.createRadialGradient(x, y, 3, x, y, 52);
+    glow.addColorStop(0, "rgba(0,0,0,1)");
+    glow.addColorStop(.7, "rgba(0,0,0,.95)");
+    glow.addColorStop(1, "rgba(0,0,0,0)");
+
+    ctx.fillStyle = glow;
+    ctx.beginPath();
+    ctx.arc(x, y, 52, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function getPoint(event) {
+    const rect = area.getBoundingClientRect();
+    return {
+      x: Math.max(0, Math.min(rect.width, event.clientX - rect.left)),
+      y: Math.max(0, Math.min(rect.height, event.clientY - rect.top))
+    };
+  }
+
+  area.addEventListener("pointerdown", event => {
+    drawing = true;
+    area.setPointerCapture(event.pointerId);
+
+    lastPoint = getPoint(event);
+    candle.style.display = "block";
+    candle.style.left = lastPoint.x + "px";
+    candle.style.top = lastPoint.y + "px";
+
+    revealAt(lastPoint.x, lastPoint.y);
+    event.preventDefault();
+  });
+
+  area.addEventListener("pointermove", event => {
+    if (!drawing) return;
+
+    const point = getPoint(event);
+    candle.style.left = point.x + "px";
+    candle.style.top = point.y + "px";
+
+    const distance = Math.hypot(
+      point.x - lastPoint.x,
+      point.y - lastPoint.y
+    );
+
+    const steps = Math.max(1, Math.ceil(distance / 12));
+
+    for (let i = 1; i <= steps; i++) {
+      const t = i / steps;
+      revealAt(
+        lastPoint.x + (point.x - lastPoint.x) * t,
+        lastPoint.y + (point.y - lastPoint.y) * t
+      );
+    }
+
+    lastPoint = point;
+    event.preventDefault();
+  });
+
+  function stopDrawing() {
+    drawing = false;
+    lastPoint = null;
+  }
+
+  area.addEventListener("pointerup", stopDrawing);
+  area.addEventListener("pointercancel", stopDrawing);
+  area.addEventListener("lostpointercapture", stopDrawing);
+
+  paintVeil();
+  window.addEventListener("resize", paintVeil);
+}
+</script>
+
+</body>
+</html>
